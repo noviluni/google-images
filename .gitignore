@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+
+# More
+.idea/
+dataset/
+geckodriver.log
