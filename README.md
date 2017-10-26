@@ -20,17 +20,21 @@ You can change “cat” by any word you want to search and “10” by any numb
 ### Requirements
 
 ##### System requirements:
-- geckodriver in PATH
+- *Python 3*
+- *geckodriver* in PATH.
+
+*Note: You can download the geckodriver [here](https://github.com/mozilla/geckodriver/releases). The simple way in linux to add the executable to the PATH is moving it to /usr/bin and adding it execute permissions (super user required).*
+
 
 ##### Python requirements:
-- requests
-- selenium
+- *requests*
+- *selenium*
 
 You can install them using `pip install -r requirements.txt`.
 
 
 ### Limitations and ideas
-Normally you can get from Google Images less than 1000 images by query.
+Normally you can get from *Google Images* less than 1000 images by query.
  If you are going to use this script to download images to train a neural network,
  you can search for the same term in different languages to get more results.
 
