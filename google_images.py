@@ -65,7 +65,7 @@ def get_images(driver):
     return images
 
 
-def get_image_file(image, final_download_path, img_count, downloaded_img_count):
+def get_image_file(image, final_download_path, img_count, downloaded_img_count, timeout=1):
     headers = {'User-Agent':
                'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'}
     img_extensions = {'jpg', 'jpeg', 'png', 'gif'}
@@ -80,7 +80,7 @@ def get_image_file(image, final_download_path, img_count, downloaded_img_count):
     print('Downloading image {}: {}'.format(img_count, img_url))
 
     # We download every image and save it on disk
-    response = requests.get(img_url, headers=headers, stream=True)
+    response = requests.get(img_url, headers=headers, stream=True, timeout=timeout)
     image_name = '{}/{}.{}'.format(final_download_path, str(downloaded_img_count), img_type)
     with open(image_name, 'wb') as out_file:
         shutil.copyfileobj(response.raw, out_file)
